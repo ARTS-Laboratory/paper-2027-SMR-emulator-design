@@ -8,3 +8,5 @@ Including the
 - Pipe fittings
 - Pump
 - Shut off valves
+
+![Alt text](figures/thermal_loop_v1.png)
