@@ -91,7 +91,7 @@ Implements a Level-2 MATLAB S-function that wraps the dynamic MATLAB model for u
 
 ### Full Simulink/Simscape Model
 
-`reactorBlock_Simulink_Simscape_Full_Controller_8_26_2025.slx`
+`reactorBlock_Simulink_Simscape_Full_Controller.slx`
 
 Contains the full integrated dynamic model, including the MATLAB S-function reactor block, Simscape two-phase Rankine-cycle components, and the full valve-pump-rod control architecture.
 
@@ -154,13 +154,13 @@ The file contains the steady-state solution and the dynamic initial condition ve
 ### Step 4: Open the Full Simulink/Simscape Model
 
 ```matlab
-open_system('reactorBlock_Simulink_Simscape_Full_Controller_8_26_2025.slx');
+open_system('reactorBlock_Simulink_Simscape_Full_Controller.slx');
 ```
 
 ### Step 5: Run the Dynamic Simulation
 
 ```matlab
-sim('reactorBlock_Simulink_Simscape_Full_Controller_8_26_2025.slx');
+sim('reactorBlock_Simulink_Simscape_Full_Controller.slx');
 ```
 
 The full model simulates the coupled SMR, moving-boundary steam generator, Rankine cycle, and control system.
@@ -190,7 +190,7 @@ The files should be used in the following order:
 6. reactorBlock.m
    Wraps reactor_ode4.m as a Simulink S-function.
 
-7. reactorBlock_Simulink_Simscape_Full_Controller_8_26_2025.slx
+7. reactorBlock_Simulink_Simscape_Full_Controller.slx
    Runs the full integrated Simulink/Simscape dynamic model.
 ```
 
