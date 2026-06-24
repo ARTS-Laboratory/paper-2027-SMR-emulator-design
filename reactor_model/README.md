@@ -1,8 +1,3 @@
-# Reactor Model
-
-1. Ali, this is where to push your model to start.
-
-
 # iPWR-SMR-Dynamic-Model
 
 Thermodynamically coupled dynamic model of an iPWR-type small modular reactor (SMR) with a three-region moving-boundary steam generator and physics-based Rankine cycle.
