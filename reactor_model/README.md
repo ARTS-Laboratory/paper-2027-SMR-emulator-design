@@ -224,6 +224,35 @@ The main dynamic model uses 16 states:
 
 ---
 
+## Initial Conditions and Rated Steady-State Initialization
+
+All dynamic simulations are initialized from the nominal rated operating point of the integrated SMR model. Before running the Simulink/Simscape transient simulation, the MATLAB steady-state solver is used to compute a consistent rated steady-state solution for the reactor, primary loop, and three-region moving-boundary steam generator.
+
+The steady-state solution corresponds to rated operating conditions, including:
+
+* rated reactor thermal power,
+* rated primary-loop pressure,
+* rated secondary/steam-generator pressure,
+* rated primary mass flow rate,
+* rated steam mass flow rate,
+* nominal hot-leg and cold-leg temperatures,
+* nominal steam-generator outlet temperature,
+* nominal moving-boundary region lengths `L1`, `L2`, and `L3`.
+
+For the nominal case, the rated steady-state conditions correspond to 160 MW of reactor thermal power, 12.76 MPa of primary pressure, 3.448 MPa of secondary steam pressure, 587 kg/s of primary mass flow rate, and 67.07 kg/s of steam mass flow rate.
+
+The script `steadySolve2.m` solves the nonlinear steady-state residual equations defined in `reactorSteadyResidual2.m`. The resulting solution is saved in:
+
+```text
+steadyStateResults.mat
+```
+
+This file contains the dynamic initial condition vector `X_dyn0`, which is loaded by `reactorBlock.m` when the Simulink/Simscape model starts. Therefore, the transient load-following simulation begins from a physically consistent rated steady state rather than from manually assigned or arbitrary initial values.
+
+If any major model parameter is changed in `buildParams4.m`, the steady-state solver should be run again before executing the Simulink/Simscape model. This ensures that the initial conditions remain consistent with the updated rated operating point.
+
+---
+
 ## Load-Following Case
 
 The main transient case is a 5% reduction in turbine mechanical power demand, from 50 MW to 47.5 MW.
