@@ -19,7 +19,7 @@ The MATLAB/Simulink portion represents the nuclear island and steam generator dy
 * point-kinetics reactor model with one effective delayed neutron precursor group,
 * fuel and coolant temperature reactivity feedback,
 * lumped fuel and primary-coolant thermal-hydraulic states,
-* natural-circulation primary flow,
+* constant-speed pump-driven primary flow,
 * hot-leg and cold-leg transport delays,
 * three-region moving-boundary steam generator model:
 
