@@ -94,7 +94,9 @@ function Output(block)
     h_out_val = y(idx.h_out);
     m_dot_out = block.Dwork(1).Data;
 
-    m_p    = params.m_dot_p_rated * y(idx.phi)^(1/3);
+    %m_p    = params.m_dot_p_rated * y(idx.phi)^(1/3);
+    m_p    = params.m_dot_p_rated;
+    
     S_turb = XSteam('s_ph', P_s_val, h_out_val/1000);
     h_iso  = XSteam('h_ps', 0.08, S_turb)*1000;
     P_mech = params.eta_T * (h_out_val - h_iso) * m_dot_out;
