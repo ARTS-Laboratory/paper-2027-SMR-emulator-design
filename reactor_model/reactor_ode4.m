@@ -91,7 +91,9 @@ Valve        = params.Valve_fun(t);
 
 
   % primary flow
-  m_p     = m_dot_p_rated * phi^(1/3);
+  %m_p     = m_dot_p_rated * phi^(1/3);
+  m_p     = m_dot_p_rated;
+
 
   % saturated‐steam temperature
   T_sat   = XSteam('Tsat_p', P_s);
